@@ -1,0 +1,69 @@
+<view>
+  <loading wx:if="{{loading}}" />
+  <commonSwiper></commonSwiper>
+  <!-- 导航条 -->
+  <scroll-view scroll-x class="bg-gradual-blue nav text-center" scroll-left="{{scrollLeft}}">
+    <view class="cu-item {{item.value==tabSelectValue?'text-white cur':''}}" wx:for="{{navList}}" wx:key="index" bindtap="tabSelect" data-value="{{item.value}}" data-index="{{index}}">
+      {{item.label}}
+    </view>
+  </scroll-view>
+  <!-- 英雄宫格列表 -->
+  <scroll-view scroll-y scroll-with-animation style="height:calc(100vh - 464rpx)">
+    <view class="cu-list grid col-4" >
+      <view
+        class="cu-item"
+        wx:for="{{curList}}"
+        wx:key='index' 
+        bindtap="showModal"
+        data-target="{{ {radiotype:'RadioModal',hreoInfo:item} }}" 
+        >
+        <view class=" text-{{item.color}}">
+          <view class="cu-avatar xl round" style="background-image:url({{item.iconUrl}});"></view>
+        </view>
+        <text>{{item.cname}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 单选区服弹窗 -->
+  <view class="cu-modal  {{modalName==='RadioModal'?'show':''}}"  bindtap="hideModal">
+    <view class="cu-dialog" >
+      <view class="cu-list menu text-left ">
+        <view catchtap="selectType" data-target="{{ {info:item, radiotype:'Modal'}  }}"  class="cu-item" wx:for="{{radioTypeList}}" wx:key="index">
+          {{item.label}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 战力显示弹窗 -->
+  <view class="cu-modal  {{modalName=='Modal'?'show':''}}" >
+    <view  class="cu-dialog bg-gradual-blue">
+      <view class="cu-bar  justify-end">
+        <view class="content">{{heroDetail.platform}} {{heroDetail.name}}</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-sm" >
+        <view class="cu-avatar shadow-warp xl round margin-left" style="background-image:url({{heroDetail.photo}});"></view>
+        <view class="text-lg text-left padding-lr-xl  padding-xs">
+          最低县标: {{heroDetail.area}} {{heroDetail.areaPower}}
+        </view>
+        <view class="text-lg text-left padding-lr-xl  padding-xs">
+          最低市标: {{heroDetail.city}} {{heroDetail.cityPower}}
+        </view>
+        <view class="text-lg text-left padding-lr-xl  padding-xs">
+          最低省标: {{heroDetail.province}} {{heroDetail.provincePower}}
+        </view>
+        <view class="text-lg text-left padding-lr-xl  padding-xs">
+          最低国标: {{heroDetail.guobiao}}
+        </view>
+        <!-- <view class="text-lg text-left padding-lr-xl  padding-xs">
+          更新时间: {{heroDetail.updatetime}}
+        </view> -->
+      </view>
+      <view class="padding-lr flex flex-direction">
+        <button class="cu-btn margin-tb-sm lg bg-gradual-pink shadow-warp" bindtap="hideModal">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

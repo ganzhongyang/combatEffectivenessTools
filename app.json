@@ -1,0 +1,47 @@
+{
+  "lazyCodeLoading": "requiredComponents",
+  "pages": [
+    "pages/index/index",
+    "pages/modifyRegion/modifyRegion",
+    "pages/modifyName/modifyName",
+    "pages/moreTools/moreTools",
+    "pages/about/about/about",
+    "pages/about/log/log"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "战力查询助手2023",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#229453",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "战力查询",
+        "iconPath": "/images/ranking.png",
+        "selectedIconPath": "/images/ranking-1.png"
+      },
+      {
+        "pagePath": "pages/modifyRegion/modifyRegion",
+        "text": "修改战区",
+        "iconPath": "/images/region.png",
+        "selectedIconPath": "/images/region-1.png"
+      },
+      {
+        "pagePath": "pages/modifyName/modifyName",
+        "text": "特殊改名",
+        "iconPath": "/images/edit.png",
+        "selectedIconPath": "/images/edit-1.png"
+      },
+      {
+        "pagePath": "pages/moreTools/moreTools",
+        "text": "更多工具",
+        "iconPath": "/images/tool.png",
+        "selectedIconPath": "/images/tool-1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

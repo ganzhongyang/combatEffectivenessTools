@@ -1,0 +1,26 @@
+<!--pages/modifyRegion/modifyRegion.wxml-->
+<view>
+  <commonSwiper></commonSwiper>
+  <!-- 导航条 -->
+  <scroll-view scroll-x class="bg-gradual-blue nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{item.value==tabcur?'text-wihter cur':''}}" wx:for="{{navList}}" wx:key="index" bindtap="tabSelect" data-value="{{item.value}}" data-index="{{index}}">
+        {{item.label}}
+      </view>
+    </view>
+  </scroll-view>
+  <scroll-view  scroll-into-view="main-{{MainCur}}"  scroll-y style="height:calc(100vh - 464rpx)">
+    <view class="padding" id="main-0">
+      <view wx:for="{{content}}" wx:key="index">
+        <view wx:if="{{item.title}}" class='text-black text-lg margin-bottom-sm'>{{item.title}}</view>
+        <view wx:if="{{item.text}}" class="margin-bottom-sm">{{item.text}}</view>
+        <view wx:if="{{item.img}}" class="text-center margin-bottom">
+          <image src="{{item.img}}"></image>
+        </view>
+      </view>
+      <view wx:if="{{tabcur===2}}" class="padding flex flex-direction">
+        <button class="cu-btn bg-gradual-pink margin-tb-sm lg" open-type='contact'>联系客服</button>
+      </view>
+    </view>
+  </scroll-view>
+</view>

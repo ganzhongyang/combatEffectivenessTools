@@ -1,0 +1,13 @@
+<!--pages/components/commonSwiper/commonSwiper.wxml-->
+<view>
+ <!-- 轮播图 -->
+  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay interval="6000" duration="500">
+    <view wx:for="{{swiperList}}" wx:key="index" >
+      <swiper-item wx:if="{{item.url}}" >
+        <image wx:if="{{item.type==='image'}}" src="{{item.cover}}" mode="aspectFill" ></image>
+        <video wx:if="{{item.type==='video'}}" src="{{item.url}}" autoplay="true" loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover">
+        </video>
+      </swiper-item>
+  </view>
+  </swiper>
+</view>

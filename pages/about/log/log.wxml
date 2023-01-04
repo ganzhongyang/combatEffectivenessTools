@@ -1,0 +1,26 @@
+<view class="cu-timeline">
+  <view class="cu-item text-orange">
+    <view class="bg-gradual-orange content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-orange">v0.0.1</view>
+        <view class="cu-tag line-white">2023/01/04</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.更新轮播图为动态</view>
+        <view>2.更新英雄列表</view>
+        <view>2.优化部分操作体验</view>
+      </view>
+    </view>   
+  </view>
+  <view class="cu-item text-orange">
+    <view class="bg-gradual-orange content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-orange">v0.0.1</view>
+        <view class="cu-tag line-white">2022/12/29</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.对该小程序进行了第一次的开发</view>
+      </view>
+    </view>   
+  </view>
+</view>

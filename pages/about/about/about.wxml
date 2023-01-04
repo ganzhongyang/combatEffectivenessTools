@@ -1,0 +1,9 @@
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于战力查询助手</view>
+  <view class='text-content'>
+    <view>Hi！欢迎使用战力查询助手！</view>
+    <view class='margin-top-sm'>这个小程序源码我放到Git了，这个项目一方面是方便大家查询战力信息。一方面是丰富自己的知识技能</view>
+    <view class='margin-top-sm'>该项目使用的是ColorUi,是一款挺漂亮UI库，可惜现在已经不更新了，你可以做一些修改发布就变成了一个独立的项目</view>
+    <view class='margin-top-sm'>更多功能敬请期待！</view>
+  </view>
+</view>

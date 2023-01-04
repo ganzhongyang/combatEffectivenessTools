@@ -1,0 +1,52 @@
+<!--pages/modifyName/modifyName.wxml-->
+<view>
+    <commonSwiper></commonSwiper>
+    <!-- 导航条 -->
+    <scroll-view scroll-x class="bg-gradual-blue nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{item.value==tabcur?'text-wihter cur':''}}" wx:for="{{navList}}" wx:key="index" bindtap="tabSelect" data-value="{{item.value}}" data-index="{{index}}">
+        {{item.label}}
+      </view>
+    </view>
+    </scroll-view>
+    <!-- 卡片 -->
+  <view class="cu-card case no-card">
+    <view class="cu-item shadow">
+      <view class="image">
+        <image src="{{exampleImg}}" mode="widthFix"></image>
+        <view class="cu-tag bg-cyan">样图</view>
+        <!-- <view class="cu-bar bg-shadeBottom">
+          <text class="text-cut">描述。。。。。</text>
+        </view> -->
+        <view wx:if="{{tabcur===0}}" class="flex flex-direction">
+          <button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="createName">生成并复制空白名称</button>
+        </view>
+        <view wx:if="{{tabcur===1}}" class="flex flex-direction">
+          <input 
+            style="height: 80rpx;border-radius: 15rpx; "
+            class="bg-gray  text-lg padding-lr-xl margin text-center" 
+            maxlength="5" 
+            placeholder="请输入昵称(1-5个字符)" 
+            placeholderStyle="color:#A9A9A9;"
+            value="{{repeatName}}"
+            bindinput='setRepetName'
+            type="text"/>
+          <button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="createRepeatName">生成重复名称</button>
+        </view>
+        <view wx:if="{{tabcur===2}}" class="flex flex-direction">
+          <input 
+          bindlongpress="copyRandomName"
+          disabled="true"
+          style="height: 80rpx;" 
+          class="bg-gray  radius text-center text-black shadow-blur margin" 
+          placeholder="长按复制，中文自行修改" 
+          value="{{randomName}}"
+          type="text"/>
+          <button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="createRandomName">随机生成超美符号名称</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  
+</view>
