@@ -185,14 +185,14 @@ Page({
         ]
       }
     ],
-    MainCur:0
+    MainCur:1
   },
   tabSelect(e) {
     const tabcur = e.currentTarget.dataset.value
     this.setData({
       tabcur,
       content:this.data.newsList[tabcur].content,
-      MainCur:0
+      MainCur:1
     })
   },
   /**

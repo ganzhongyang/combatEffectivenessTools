@@ -9,8 +9,8 @@
       </view>
     </view>
   </scroll-view>
-  <scroll-view  scroll-into-view="main-{{MainCur}}"  scroll-y style="height:calc(100vh - 464rpx)">
-    <view class="padding" id="main-0">
+  <scroll-view  scroll-top="{{MainCur}}" scroll-y 	scroll-with-animation style="height:calc(100vh - 464rpx)">
+    <view class="padding">
       <view wx:for="{{content}}" wx:key="index">
         <view wx:if="{{item.title}}" class='text-black text-lg margin-bottom-sm'>{{item.title}}</view>
         <view wx:if="{{item.text}}" class="margin-bottom-sm">{{item.text}}</view>
